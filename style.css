@@ -34,6 +34,7 @@ div {
     display: inline-block;
     vertical-align: top;
     text-align: left;
+    visibility: hidden;
 }
 
 #display-shade {
