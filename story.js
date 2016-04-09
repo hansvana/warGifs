@@ -9,7 +9,7 @@ var story = {
         screenFile: "help.html",
         paperFile: null,
         autoForward: "help2",
-        autoForwardDelay: 5000
+        autoForwardDelay: 3000
     },
     help2: { // unknown location
         screenFile: "help2.html",
@@ -29,8 +29,11 @@ var story = {
     page5: { // unknown location
         screenFile: "screen5.html",
         paperFile: "paper2.html",
-        autoForward: "page6",
-        autoForwardDelay: 10000
+        choiceActions: [
+            {action: "page6", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+        ]
     },
     page6: { // cannot connect to home wifi
         screenFile: "screen6.html",
@@ -50,7 +53,19 @@ var story = {
         choiceActions: [
             {action: "", text: "", delay: 0},
             {action: "", text: "", delay: 0},
-            {action: "", text: "", delay: 0}
+            {action: "gallery1", text: "Printing...", delay: 1000}
         ]
+    },
+    gallery1: { // gallery 1
+        screenFile: "galleryscreen1.html",
+        paperFile: "gallery1.html",
+        autoForward: "gallery2",
+        autoForwardDelay: 4000
+    },
+    gallery2: { // gallery 1
+        screenFile: "galleryscreen2.html",
+        paperFile: "gallery1.html",
+        autoForward: "gallery2",
+        autoForwardDelay: 4000
     },
 };
