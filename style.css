@@ -88,9 +88,11 @@ div {
     list-style-image: url('img/bullet.png');
 }
 
-#paper {
+.paper {
     z-index: -999;
     margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
     width: 700px;
     height: 500px;
     position: absolute;
@@ -100,4 +102,5 @@ div {
     margin-right: auto;
     left: 0;
     right: 0;
+    box-shadow: 0px 10px 5px rgba(0,0,0,0.3);
 }
