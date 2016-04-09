@@ -59,6 +59,7 @@ table {
 }
 
 #powerbutton {
+    display: none;
     float: right;
     width: 216px;
     height: 216px;

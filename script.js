@@ -5,9 +5,17 @@
 var Engine = {
     state: "START",
     init: function() {
-        console.log(this);
+        var self = this;
+
+        setTimeout(function(){
+            document.getElementById("powerbutton").style.display = "block";
+        },1000);
+
         document.getElementById("powerbutton").onclick = function() {
-            console.log(this);
+            if (self.state === "START"){
+                document.getElementById("powerbutton").style.backgroundImage = "url('img/pwr-butt-on.png')";
+                document.getElementById("panel").style.backgroundImage = "url('img/plastic.jpg')";
+            }
         }
     }
 };
