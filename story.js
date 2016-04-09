@@ -1,30 +1,56 @@
 var story = {
-    page1: {
-      screenFile: "testscreen.html",
-      paperFile: "test.html",
+    wakeup: { // blank screen
+      screenFile: null,
+      paperFile: null,
+      autoForward: "help",
+        autoForwardDelay: 1000
+    },
+    help: { // help
+        screenFile: "help.html",
+        paperFile: null,
+        autoForward: "help2",
+        autoForwardDelay: 5000
+    },
+    help2: { // unknown location
+        screenFile: "help2.html",
+        paperFile: null,
+        autoForward: "intro",
+        autoForwardDelay: 1000
+    },
+    intro: { // print test page
+      screenFile: "screen1.html",
+      paperFile: null,
       choiceActions: [
-          "page2","page3","page4"
+          {action: "page5", text: "Enabling GPS", delay: 1000},
+          {action: "", text: "", delay: 0},
+          {action: "", text: "", delay: 0}
       ]
     },
-    page2: {
-        screenFile: "testscreen2.html",
-        paperFile: "test2.html",
+    page5: { // unknown location
+        screenFile: "screen5.html",
+        paperFile: "paper2.html",
+        autoForward: "page6",
+        autoForwardDelay: 10000
+    },
+    page6: { // cannot connect to home wifi
+        screenFile: "screen6.html",
+        paperFile: null,
+        autoForward: "page7",
+        autoForwardDelay: 3000
+    },
+    page7: { // no friendly connections found
+        screenFile: "screen7.html",
+        paperFile: null,
+        autoForward: "page8",
+        autoForwardDelay: 4000
+    },
+    page8: { // unknown camera detected
+        screenFile: "screen8.html",
+        paperFile: null,
         choiceActions: [
-            "page1","page3","page4"
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
         ]
     },
-    page3: {
-        screenFile: "testscreen3.html",
-        paperFile: "test3.html",
-        choiceActions: [
-            "page1","page2","page4"
-        ]
-    },
-    page4: {
-        screenFile: "testscreen4.html",
-        paperFile: "test4.html",
-        choiceActions: [
-            "page1","page2","page3"
-        ]
-    }
 };

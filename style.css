@@ -94,8 +94,8 @@ div {
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
-    width: 700px;
-    height: 500px;
+    width: 840px;
+    height: 600px;
     position: absolute;
     background-image: url('img/paper.jpg');
     top: -500px;
