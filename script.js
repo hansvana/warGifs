@@ -1,5 +1,13 @@
 var Engine = {
     state: "START",
+    audio: {
+        printer: new Audio('audio/printer2.mp3'),
+        device: new Audio('audio/device-connect.mp3'),
+        anthem: new Audio('audio/anthem.mp3'),
+        background: new Audio('audio/background.mp3'),
+        click: new Audio('audio/click.mp3'),
+        printerstart: new Audio('audio/printer_start.mp3')
+    },
     init: function() {
         var self = this;
 
@@ -11,8 +19,9 @@ var Engine = {
             console.log(self.state);
             switch(self.state){
                 case "START":
+                    self.audio.printerstart.play();
                     self.lightsOn();
-                    self.newPaper("wakeup");
+                    self.newPaper("chat");
                     break;
                 case "page1":
                     self.lightsOff();
@@ -22,6 +31,14 @@ var Engine = {
                     },1000);
             }
         };
+
+        this.audio.background.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+
+        this.audio.background.play();
+
     },
     lightsOn: function() {
         document.getElementById("powerbutton").style.backgroundImage = "url('img/pwr-butt-on.png')";
@@ -59,6 +76,7 @@ var Engine = {
         if (story[page].choiceActions !== undefined) {
             if (story[page].choiceActions[0].action !== "") {
                 document.getElementById("button1").onclick = function () {
+                    self.audio.click.play();
                     $("#display").html(story[page].choiceActions[0].text)
                         .append($("<div>").attr("id", "display-shade"));
                     setTimeout(function () {
@@ -72,6 +90,7 @@ var Engine = {
 
             if (story[page].choiceActions[1].action !== "") {
                 document.getElementById("button2").onclick = function () {
+                    self.audio.click.play();
                     $("#display").html(story[page].choiceActions[1].text)
                         .append($("<div>").attr("id", "display-shade"));
                     setTimeout(function () {
@@ -85,6 +104,7 @@ var Engine = {
 
             if (story[page].choiceActions[2].action !== "") {
                 document.getElementById("button3").onclick = function () {
+                    self.audio.click.play();
                     $("#display").html(story[page].choiceActions[2].text)
                         .append($("<div>").attr("id", "display-shade"));
                     setTimeout(function () {
@@ -104,7 +124,10 @@ var Engine = {
 
         $paper.clone().prop('id','newPaper').appendTo($('body'));
 
-        $("#newPaper").css('top', '-500px')
+        $("#newPaper").css('top', '-500px');
+
+        this.audio.printer.currentTime = 0;
+        this.audio.printer.play();
 
         $("#newPaper").load("pages/" + story[page].paperFile,function(){
             $("#newPaper").animate({top:-250}, 200);

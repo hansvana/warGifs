@@ -3,7 +3,7 @@ var story = {
       screenFile: null,
       paperFile: null,
       autoForward: "help",
-        autoForwardDelay: 1000
+        autoForwardDelay: 5000
     },
     help: { // help
         screenFile: "help.html",
@@ -47,7 +47,7 @@ var story = {
         autoForward: "page8",
         autoForwardDelay: 4000
     },
-    page8: { // unknown camera detected
+    page8: { // unknown device detected
         screenFile: "screen8.html",
         paperFile: null,
         choiceActions: [
@@ -64,8 +64,69 @@ var story = {
     },
     gallery2: { // gallery 1
         screenFile: "galleryscreen2.html",
-        paperFile: "gallery1.html",
-        autoForward: "gallery2",
-        autoForwardDelay: 4000
+        paperFile: "gallery2.html",
+        autoForward: "page9",
+        autoForwardDelay: 5000
     },
+    page9: { // unknown device detected
+        screenFile: "screen9.html",
+        paperFile: null,
+        autoForward: "page10",
+        autoForwardDelay: 1000
+    },
+    page10: { // unknown device detected 2
+        screenFile: "screen10.html",
+        paperFile: null,
+        autoForward: "page11",
+        autoForwardDelay: 500
+    },
+    page11: { // unknown device detected 2
+        screenFile: "screen11.html",
+        paperFile: null,
+        choiceActions: [
+            {action: "mp3", text: "Loading media file...", delay: 1000},
+            {action: "chat", text: "Printing chat history", delay: 1000},
+            {action: "webcam", text: "Webcam", delay: 1000}
+
+        ]
+    },
+    mp3: { // mp3 player
+        screenFile: "device_mp3.html",
+        paperFile: null,
+        choiceActions: [
+            {action: "mp3", text: "Loading media file...", delay: 1000},
+            {action: "chat", text: "Printing chat history", delay: 1000},
+            {action: "webcam", text: "Webcam", delay: 1000}
+
+        ]
+    },
+    chat: { // iphone chat
+        screenFile: "device_chat.html",
+        paperFile: "chat.html",
+        choiceActions: [
+            {action: "mp3", text: "Loading media file...", delay: 1000},
+            {action: "chat", text: "Printing chat history", delay: 1000},
+            {action: "webcam", text: "Webcam", delay: 1000}
+
+        ]
+    },
+    webcam: { // webcam
+        screenFile: "screen12.html",
+        paperFile: "webcam1.html",
+        autoForward: "webcam2",
+        autoForwardDelay: 500
+    },
+    webcam2: {
+        screenFile: "screen13.html",
+        paperFile: "webcam2.html",
+        autoForward: "webcam3",
+        autoForwardDelay: 500
+    },
+    webcam3: {
+        screenFile: "screen14.html",
+        paperFile: "webcam3.html",
+        autoForward: "webcam",
+        autoForwardDelay: 500
+    },
+
 };
