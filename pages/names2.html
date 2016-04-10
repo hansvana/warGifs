@@ -1,6 +1,6 @@
 <table style="width: 800px; height: 560px;">
     <tr>
-        <td style="text-align: justify"><h2>
+        <td style="text-align: justify" class="namelist"><h2>
             LIUBOMYR HURMAK -
             MARKIYAN HUTZ -
             VIKTOR DAVYDIUK -
@@ -68,3 +68,11 @@
         </td>
     </tr>
 </table>
+<script>
+    $('.namelist').css("opacity",Engine.inkLevel);
+    Engine.inkLevel-=0.1;
+
+    if (Engine.inkLevel < 0.2){
+        Engine.newPaper("outofink");
+    }
+</script>

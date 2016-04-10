@@ -2,6 +2,7 @@ var Engine = {
     state: "START",
     toSetup: 0,
     toPayoff: 0,
+    inkLevel: 1,
     audio: {
         printer: new Audio('audio/printer2.mp3'),
         device: new Audio('audio/device-connect.mp3'),
@@ -29,6 +30,7 @@ var Engine = {
                 case "chat":
                 case "mp3":
                 case "webcam4":
+                    self.audio.anthem.pause();
                     self.lightsOff();
                     setTimeout(function() {
                         self.lightsOn();

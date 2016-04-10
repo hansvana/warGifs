@@ -235,5 +235,11 @@ var story = {
         autoForward: "names1",
         autoForwardDelay: 4000
     },
+    outofink: { // help
+        screenFile: "outofink.html",
+        paperFile: null,
+        autoForward: "",
+        autoForwardDelay: 100000
+    },
 
 };
