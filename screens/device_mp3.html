@@ -9,3 +9,9 @@
     <li>- Vova's_iPhone_Xx</li>
     <li>- Remote IP Webcam</li>
 </ul>
+<script>
+    Engine.trigger("toSetup");
+    if (this.toSetup > 1){
+        $("#display").append("<br><br><p><strong>Hold power button <br>to enter setup</strong></p>")
+    }
+</script>

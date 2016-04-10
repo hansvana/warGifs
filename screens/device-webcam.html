@@ -1,0 +1,17 @@
+<p><img src="img/bluetooth.png" height="12px" style="opacity: 0.3"> Unknown device detected:</p>
+<script>
+
+    Engine.audio.device.currentTime = 0;
+    Engine.audio.device.play();
+</script>
+<ul>
+    <li>- MP3_PLAYER_DEVICE</li>
+    <li>- Vova's_iPhone_Xx</li>
+    <li>- Remote IP Webcam</li>
+</ul>
+<script>
+    Engine.trigger("toSetup");
+    if (Engine.toSetup > 1){
+        $("#display").append("<br><br><p><strong>Hold power button <br>to enter setup</strong></p>")
+    }
+</script>

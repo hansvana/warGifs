@@ -1,2 +1,15 @@
-<p>Printing image 1/3</p>
-<p>30-03-2014_09:34.JPG</p>
+<p>Printing image 3/3</p>
+<ul>
+    <li>- MP3_PLAYER_DEVICE</li>
+    <li>- Vova's_iPhone_Xx</li>
+    <li>- Remote IP Webcam</li>
+</ul>
+<script>
+
+    Engine.trigger("toSetup");
+    console.log(Engine.toSetup);
+    if (Engine.toSetup > 1){
+
+        $("#display").append("<br><br><p><strong>Hold power button <br>to enter setup</strong></p>")
+    }
+</script>

@@ -1,0 +1,29 @@
+<img src="img/kaartgroot.jpg">
+<img src="img/flag-dpr.png"     style="position: absolute; top:60px; left: 445px; height: 20px;" id="markerA" class="flag">
+<img src="img/flag-dpr.png"     style="position: absolute; top:100px; left: 420px; height: 20px;" id="markerB" class="flag">
+<img src="img/flag-ukr.jpg"     style="position: absolute; top:180px; left: 410px; height: 20px;" id="markerC" class="flag">
+<img src="img/flag-ukr.jpg"     style="position: absolute; top:210px; left: 230px; height: 20px;" id="markerD" class="flag">
+<img src="img/flag-crimea.jpg"  style="position: absolute; top:300px; left: 170px; height: 20px;" id="markerE" class="flag">
+<img src="img/flag-crimea.jpg"  style="position: absolute; top:460px; left: 130px; height: 20px;" id="markerF" class="flag">
+<script>
+    var flags = [
+        {name: "markerA", img: "Donetsk.gif"},
+        {name: "markerB", img: "Road-from-Donetsk-to-Mariupol.gif"},
+        {name: "markerC", img: "Mariupol2.gif"},
+        {name: "markerD", img: "Melitopol.gif"},
+        {name: "markerE", img: "Chongar-checkpoint.gif"},
+        {name: "markerF", img: "crimea.gif"}
+    ];
+
+    flags.forEach(function(flag){
+       document.getElementById(flag.name).addEventListener('click', function(evt){
+           console.log(event.offsetX);
+           $("<div>").addClass("sticky")
+                   .html("<img src='img/"+flag.img+"'>")
+                   .css("left", (event.pageX + 40) +"px")
+                   .css("top", Math.min(event.pageY + 20, 650) +"px")
+                   .appendTo("body");
+           Engine.trigger("toPayoff");
+       })
+    });
+</script>

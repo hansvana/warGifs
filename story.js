@@ -96,7 +96,7 @@ var story = {
         choiceActions: [
             {action: "mp3", text: "Loading media file...", delay: 1000},
             {action: "chat", text: "Printing chat history", delay: 1000},
-            {action: "webcam", text: "Webcam", delay: 1000}
+            {action: "webcam", text: "Printing webcam history", delay: 1000}
 
         ]
     },
@@ -106,7 +106,7 @@ var story = {
         choiceActions: [
             {action: "mp3", text: "Loading media file...", delay: 1000},
             {action: "chat", text: "Printing chat history", delay: 1000},
-            {action: "webcam", text: "Webcam", delay: 1000}
+            {action: "webcam", text: "Printing webcam history", delay: 1000}
 
         ]
     },
@@ -114,19 +114,126 @@ var story = {
         screenFile: "screen12.html",
         paperFile: "webcam1.html",
         autoForward: "webcam2",
-        autoForwardDelay: 500
+        autoForwardDelay: 3000
     },
     webcam2: {
         screenFile: "screen13.html",
         paperFile: "webcam2.html",
         autoForward: "webcam3",
-        autoForwardDelay: 500
+        autoForwardDelay: 3000
     },
     webcam3: {
         screenFile: "screen14.html",
         paperFile: "webcam3.html",
-        autoForward: "webcam",
-        autoForwardDelay: 500
+        autoForward: "webcam4",
+        autoForwardDelay: 3000
+    },
+    webcam4: { // webcam eindmenu
+        screenFile: "device-webcam.html",
+        paperFile: null,
+        choiceActions: [
+            {action: "mp3", text: "Loading media file...", delay: 1000},
+            {action: "chat", text: "Printing chat history", delay: 1000},
+            {action: "webcam", text: "Printing webcam history", delay: 1000}
+
+        ]
+    },
+    setup: {
+        screenFile: "setup.html",
+        paperFile: null,
+        choiceActions: [
+            {action: "map", text: "Accessing location history...", delay: 1000},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+
+        ]
+    },
+    map: {
+        screenFile: "screen15.html",
+        paperFile: "map.html",
+        choiceActions: [
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+        ]
+    },
+    incoming1: { // help
+        screenFile: "screen16.html",
+        paperFile: null,
+        autoForward: "incoming2",
+        autoForwardDelay: 2000
+    },
+    incoming2: {
+        screenFile: "screen17.html",
+        paperFile: null,
+        choiceActions: [
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "payoff1", text: "Please wait...", delay: 1000}
+
+        ]
+    },
+    payoff1: {
+        screenFile: "readmail.html",
+        paperFile: "payoff1.html",
+        choiceActions: [
+            {action: "payoff2", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+
+        ]
+    },
+    payoff2: {
+        screenFile: "readmail.html",
+        paperFile: "payoff2.html",
+        choiceActions: [
+            {action: "payoff3", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+
+        ]
+    },
+    payoff3: {
+        screenFile: "readmail.html",
+        paperFile: "payoff3.html",
+        choiceActions: [
+            {action: "payoff4", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+
+        ]
+    },
+    payoff4: {
+        screenFile: "readmail.html",
+        paperFile: "payoff4.html",
+        choiceActions: [
+            {action: "payoff5", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+
+        ]
+    },
+    payoff5: {
+        screenFile: "readmail.html",
+        paperFile: "payoff5.html",
+        choiceActions: [
+            {action: "names1", text: "", delay: 0},
+            {action: "", text: "", delay: 0},
+            {action: "", text: "", delay: 0}
+
+        ]
+    },
+    names1: { // help
+        screenFile: "duringnames.html",
+        paperFile: "names1.html",
+        autoForward: "names2",
+        autoForwardDelay: 4000
+    },
+    names2: { // help
+        screenFile: "duringnames.html",
+        paperFile: "names2.html",
+        autoForward: "names1",
+        autoForwardDelay: 4000
     },
 
 };

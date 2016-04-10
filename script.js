@@ -1,12 +1,15 @@
 var Engine = {
     state: "START",
+    toSetup: 0,
+    toPayoff: 0,
     audio: {
         printer: new Audio('audio/printer2.mp3'),
         device: new Audio('audio/device-connect.mp3'),
         anthem: new Audio('audio/anthem.mp3'),
         background: new Audio('audio/background.mp3'),
         click: new Audio('audio/click.mp3'),
-        printerstart: new Audio('audio/printer_start.mp3')
+        printerstart: new Audio('audio/printer_start.mp3'),
+        explanation: new Audio('audio/explanation.mp3')
     },
     init: function() {
         var self = this;
@@ -21,13 +24,15 @@ var Engine = {
                 case "START":
                     self.audio.printerstart.play();
                     self.lightsOn();
-                    self.newPaper("chat");
+                    self.newPaper("wakeup");
                     break;
-                case "page1":
+                case "chat":
+                case "mp3":
+                case "webcam4":
                     self.lightsOff();
                     setTimeout(function() {
                         self.lightsOn();
-                        self.newPaper("page2")
+                        self.newPaper("setup")
                     },1000);
             }
         };
@@ -56,6 +61,19 @@ var Engine = {
         document.getElementById("display").style.boxShadow = '-2px -2px 5px rgba(0,0,0,0.3), 2px 2px 5px rgba(255,255,255,0.6)';
         document.getElementById("side-button-container").style.visibility = 'hidden';
         document.getElementById("paper").style.visibility = 'hidden';
+    },
+    trigger: function(which){
+        console.log("trigger");
+        if (which === "toSetup") {
+            this.toSetup++;
+        }
+        if (which === "toPayoff") {
+            this.toPayoff++;
+            if (this.toPayoff > 5) {
+                this.newPaper("incoming1");
+            }
+        }
+
     },
     newPaper: function(page) {
         console.log(page);
