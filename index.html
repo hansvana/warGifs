@@ -3,32 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>warGifs</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src="jquery-ui.min.js"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            overflow: hidden;
+            font-size: 14pt;
+            font-family: 'Open Sans', sans-serif;
+            display: table;
+        }
+        main {
+            height: 100%;
+            width: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: left;
+            padding: 3em;
+        }
+        a:link, a:visited, a:hover, a:active {
+            color: #000;
+            background-color: #fff;
+            padding: 3px;
+            text-decoration: none;
+            margin-top: -3px;
+        }
+
+        #go {
+            float:right;
+            font-size: 40px;
+            padding: 20px;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            box-sizing: border-box;
+            -webkit-transition: width .5s; /* Safari */
+            transition: width .5s;
+        }
+        #go:after {
+            border-left: 35px solid #fff;
+            border-bottom: 50px solid transparent;
+            border-top: 50px solid transparent;
+            content: "";
+            height: 0;
+            width: 0;
+            top:0;
+            right: -35px;
+            position: absolute;
+
+        }
+        #go:hover {
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-    <div id="container">
-        <div id="panel">
-            <div id="powerbutton"></div>
+    <main>
+        <p>This is a prototype made for <a href="http://hackastory.com">Hackastory</a>'s april 2016 Amsterdam hackathon, themed "Haikuthon".</p>
 
-            <div id="display">
+        <p>It is an experiment in using a printer as a storytelling medium. The story is based on true events.</p>
 
-                <div id="display-shade"></div>
-            </div>
-            <div id="side-button-container">
-                <div class="button" id="button1"></div>
-                <div class="button" id="button2"></div>
-                <div class="button" id="button3"></div>
-            </div>
+        <p>The War<strong>Gifs</strong> team is:
+            <br><a href="http://lisaweeda.tumblr.com">Lisa Weeda</a>
+            <br><a href="http://kajabouman.nl/">Kaja Bouman</a>
+            <br><a href="http://mouseover.nl">Hans van Arken</a>
+        </p>
 
-        </div>
-        <div id="paper" class="paper">
-
-        </div>
-
-    </div>
-    <script src="story.js"></script>
-    <script src="script.js"></script>
+        <small>
+            <p>Tested in Chrome and FireFox<br>
+            <a href="https://github.com/hansvana/warGifs">Github</a><br>
+            CC Music by <a href="http://chriszabriskie.com/">Chris Zabriskie</a></p></small>
+        <a href="printer.html" id="go">Go</a>
+    </main>
 </body>
 </html>

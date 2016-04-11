@@ -1,15 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
-@font-face {
-    font-family: 'HalfFaded';
-    src: url('HalfFaded.eot?#iefix') format('embedded-opentype'),  url('HalfFaded.woff') format('woff'), url('HalfFaded.ttf')  format('truetype'), url('HalfFaded.svg#HalfFaded') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url(https://fonts.googleapis.com/css?family=Scheherazade);
 
 html, body {
     margin: 0;
     background-color: #000;
-    font-family: HalfFaded;
+    font-family: 'Scheherazade', serif;
 }
 
 div {
@@ -37,7 +32,7 @@ div {
     padding: 1em;
     font-size: 14pt;
     color: #5d7ea1;
-    box-shadow: 0px 0px 30px #b6dafa;
+    box-shadow: -2px -2px 5px rgba(0,0,0,0.3), 2px 2px 5px rgba(255,255,255,0.6);
     display: inline-block;
     vertical-align: top;
     text-align: left;
@@ -123,6 +118,7 @@ div {
     left: 0;
     right: 0;
     box-shadow: 0px 10px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
 }
 
 .specks {

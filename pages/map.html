@@ -6,6 +6,7 @@
 <img src="img/flag-crimea.jpg"  style="position: absolute; top:300px; left: 170px; height: 20px;" id="markerE" class="flag">
 <img src="img/flag-crimea.jpg"  style="position: absolute; top:460px; left: 130px; height: 20px;" id="markerF" class="flag">
 <script>
+    console.log("click");
     var flags = [
         {name: "markerA", img: "Donetsk.gif"},
         {name: "markerB", img: "Road-from-Donetsk-to-Mariupol.gif"},
@@ -16,14 +17,16 @@
     ];
 
     flags.forEach(function(flag){
-       document.getElementById(flag.name).addEventListener('click', function(evt){
-           console.log(event.offsetX);
-           $("<div>").addClass("sticky")
-                   .html("<img src='img/"+flag.img+"'>")
-                   .css("left", (event.pageX + 40) +"px")
-                   .css("top", Math.min(event.pageY + 20, 650) +"px")
-                   .appendTo("body");
-           Engine.trigger("toPayoff");
+
+       document.getElementById(flag.name).addEventListener('click', function(event){
+           var div  = document.createElement("div");
+           div.className = "sticky";
+           div.innerHTML = "<img src='img/"+flag.img+"'>";
+           div.style.left = (event.pageX + 40) +"px";
+           div.style.top = Math.min(event.pageY + 20, 650) +"px";
+           document.body.appendChild(div);
+
+           window.e.toPayoff++;
        })
     });
 </script>

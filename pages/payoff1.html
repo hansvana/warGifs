@@ -1,6 +1,11 @@
 <script>
-    $('.sticky').remove();
-    Engine.audio.explanation.play();
+    var stickies = document.getElementsByClassName("sticky");
+
+    while (stickies[0]) {
+        stickies[0].parentNode.removeChild(stickies[0]);
+    }
+
+    window.e.play("explanation");
 </script>
 <table style="width: 800px; height: 560px;">
     <tr>

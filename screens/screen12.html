@@ -5,11 +5,9 @@
     <li>- Remote IP Webcam</li>
 </ul>
 <script>
-
-    Engine.trigger("toSetup");
-    console.log(Engine.toSetup);
-    if (Engine.toSetup > 1){
-
-        $("#display").append("<br><br><p><strong>Hold power button <br>to enter setup</strong></p>")
+    var engine = window.e;
+    engine.toSetup++;
+    if (engine.toSetup > 1){
+        engine.appendText("<br><br><p><strong>Hold power button <br>to enter setup</strong></p>")
     }
 </script>

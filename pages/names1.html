@@ -1,6 +1,14 @@
-<table style="width: 800px; height: 560px;">
+<table style="width: 800px; height: 560px;" >
     <tr>
-        <td style="text-align: justify;" class="namelist"><h2>
+        <td style="text-align: justify;" class="namelist">
+            <script>
+                var scriptTag = document.scripts[document.scripts.length - 1];
+                var parentTag = scriptTag.parentNode;
+                parentTag.style.opacity = window.e.ink;
+                window.e.ink-=0.1;
+            </script>
+
+            <h2>
             VERA BARSUKOVA -
             ROMAN ILYIN YU -
             RYABIN VYACHESLAV -
@@ -41,33 +49,9 @@
             ALEXANDER ZEMLYAKOVA -
             MARIA NIKOLAEVNA NESTERENKO -
             OLEG RAISA BAEVA -
-            VITALY BAEV -
-            VLADIMIR BORISOVICH KEVORK -
-            NATALYA IVANOVNA ZHDANOV -
-            MARFA PETROVNA CYTOKINE -
-            MARYA EFREMOVA -
-            VOLYDYMYR DANYLYK -
-            VOLYDYMYR TSALENKO -
-            RUDOLF ABRAMYAN -
-            MYKHAILO ALEKSEIEV -
-            STEPAN ANDRIYCHUK -
-            VIKTOR APALKOV -
-            VITALIY AKHROMEYEV -
-            YAROSLAV VOYTKO -
-            SERHIY VOLODKO -
-            MARIAN HAVRYLIV -
-            OMELYAN HAVRYLIV -
-            MYKOLA HORSKY
+            VITALY BAEV
 
         </h2>
         </td>
     </tr>
 </table>
-<script>
-    $('.namelist').css("opacity",Engine.inkLevel);
-    Engine.inkLevel-=0.1;
-
-    if (Engine.inkLevel < -0.2){
-        Engine.newPaper("outofink");
-    }
-</script>
