@@ -22,10 +22,11 @@ class Engine {
             $("#powerbutton").css("display", "block");
         }, 1000);
 
-        this._audio.anthem.addEventListener('ended', evt => {
+        this._audio.background.addEventListener('ended', evt => {
             evt.path[0].currentTime = 0;
             evt.path[0].play();
         }, false);
+        this._audio.background.play();
 
         $("#powerbutton").click(() => {
             this.powerButton();
